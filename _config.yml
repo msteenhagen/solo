@@ -4,7 +4,7 @@ tag_text: Talks
 description: Here's a list of past and upcoming talks
 
 # site url
-url: http://msteenhagen.github.io/talks/
+url: http://msteenhagen.github.io/talks
 
 # Build settings
 markdown: kramdown
