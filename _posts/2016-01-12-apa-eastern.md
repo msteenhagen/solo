@@ -2,6 +2,9 @@
 layout: talk
 published: true
 title: Presenting at the 2016 APA Eastern Division Meeting
+author: 
+    name: Maarten Steenhagen
+    url: http://msteenhagen.github.io
 paper: False reflections
 where: APA Eastern Division Meeting
 city: Washington

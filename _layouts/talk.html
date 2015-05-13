@@ -4,10 +4,12 @@
   {% include head.html %}
 </head>
 <body>
+
   <div class="container">
+   <a href="/"><i class="fa fa-align-left"> {{ site.tag_text }}</i></a>
   <article>       
         <div class="article-head">
-          <h2><a href="{{ site.url }}"><i class="fa fa-align-left">{{ site.tag_text }}</i></a></h2></div>
+          </div>
       <header class="entry-header">
       {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
       {% capture posttime %}{{page.date | date: '%s'}}{% endcapture %}
@@ -18,8 +20,8 @@
                 {% else %}
               <i class="fa fa-map-marker"><small> {{ page.where }}</small></i>
                 {% endif %}
-              {% endif %}
-            <h3>{{ page.date | date: "%A, %B %-d, %Y"  }} <i class="fa fa-bullseye"> upcoming</i></h3> 
+            <h3>{{ page.date | date: "%A, %B %-d, %Y"  }} <i class="fa fa-bullseye"> upcoming talk</i></h3> 
+            {% endif %}
             {% else %} 
               {% if page.where %}
                 {% if page.link %}
@@ -27,12 +29,15 @@
                 {% else %}
                 <i class="fa fa-map-marker"><small> {{ page.where }}</small></i>
                 {% endif %}
-              {% endif %}</br>
+              {% endif %}
               <i class="fa fa-calendar fa-1x"><small> {{ page.date | date: "%A, %B %-d, %Y"  }}</small></i>
             {% endif %}
-
-          <h1 class="entry-title" itemprop="headline">{% if page.headline %}{{ page.headline }}{% else %}'{{ page.paper }}'{% endif %} </h1></header>
-
+          
+          {% if page.author %}
+          <a href="{{ page.author.url }}"><i class="fa fa-user"> {{ page.author.name }}</i></a>
+          {% endif %}
+          <h1 class="entry-title" itemprop="headline">{% if page.headline %}{{ page.headline }}{% else %}'{{ page.paper }}'{% endif %} </h1>
+          </header>
         <ul class="nav">
         {% if page.handout %}
           <li><a href="{{ page.handout }}" target="_blank"><i class="fa fa-file-text fa-3x"></i><small>HANDOUT</small></a></li>
@@ -44,10 +49,11 @@
         <!-- <p><em>{{ page.description }}</em></p> -->
 
         <p>{{ content }}</p>
-
        </div>
+
     </article>
-{% include scripts.html %}	        
+
+{% include scripts.html %}	       
 
 </body>
 </html>
