@@ -2,6 +2,16 @@
 layout: default
 ---
 
-- 2016: 'False reflections', APA Eastern Division, Washington, USA.
-- 2015: 'Collingwood, sympathy, and the work of art', INSEI Conference, Cambridge, UK.
-
+{% for post in site.posts %}
+{% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
+{% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
+  <article>       
+        <div class="article-head">
+        <h3><a href="/{{ post.url }}/">{{ post.paper }}</a> 
+            {% if posttime > nowunix %} <i class="fa fa-bullseye"> upcoming</i> {% else %} {% endif %}</h3>
+        <p><i class="fa fa-calendar"><small> {{ post.date | date: "%b %d, %Y" }}</small></i></br>
+        <i class="fa fa-map-marker"><small> {{ post.where }}</small></i></p>
+        </div>
+    </article>
+    {% if forloop.last %}{% else %}{% endif %}
+{% endfor %}
