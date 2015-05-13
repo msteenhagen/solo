@@ -1,0 +1,36 @@
+<!doctype html>
+<head>
+{% include head.html %}
+</head>
+
+<body id="talk">
+
+      <header class="entry-header">
+        <span class="entry-tags">{% for tag in page.tags %}<a href="{{ site.url }}/tags.html#{{ tag | cgi_encode }}" title="Pages tagged {{ tag }}" rel="tag">{{ tag }}</a>{% unless forloop.last %}&nbsp;&bull;&nbsp;{% endunless %}{% endfor %}</span>
+        {% if page.link %}
+          <h1 class="entry-title" itemprop="headline">{% if page.headline %}{{ page.headline }}{% else %}{{ page.paper }}{% endif %}</h1>
+        {% else %}
+          <h1 class="entry-title" itemprop="headline">{% if page.headline %}{{ page.headline }}{% else %}{{ page.title }}{% endif %}</h1>
+        {% endif %}
+      </header>
+      
+        {% if page.handout %}<span class="entry-date date modified"><time datetime="{{ page.modified }}" itemprop="dateModified"><i class="icon-file"> </i><a href="{{ page.handout }}" target="_blank">&nbsp;Handout</a></time></span>{% endif %}
+
+        {% if page.slides %}<span class="entry-date date modified"><time datetime="{{ page.modified }}" itemprop="dateModified"><i class="icon-desktop"> </i><a href="{{ page.slides }}" target="_blank">&nbsp;Slides</a></time></span>{% endif %}
+
+        {% if page.where %}<span class="entry-date date modified"><time datetime="{{ page.modified }}" itemprop="dateModified"><i class="icon-pencil"> </i><a href="{{ page.link }}" target="_blank">{{ page.where }}</a></time></span>{% endif %}
+
+      
+    <nav class="pagination" role="navigation">
+      {% if page.previous %}
+        <a href="{{ site.url }}{{ page.previous.url }}" class="btn" title="{{ page.previous.title }}">Previous article</a>
+      {% endif %}
+      {% if page.next %}
+        <a href="{{ site.url }}{{ page.next.url }}" class="btn" title="{{ page.next.title }}">Next article</a>
+      {% endif %}
+    </nav>
+  
+{% include scripts.html %}	        
+
+</body>
+</html>
