@@ -1,14 +1,13 @@
 ---
 layout: talk
 published: true
-title: Workshop on skills, habits, & action explanation
-paper: Changing one's ways
-where: Skills, Habits, & Action Explanation Workshop
-when: 2013-01-01
-city: London
-link: http://www.bbk.ac.uk/philosophy/skills-habits-and-action-explanation
-description: "Just about everything you'll need to style in the theme: headings, paragraphs, blockquotes, tables, code blocks, and more."
-modified: 2014-05-01
+title: Presenting at the 2016 APA Eastern Division Meeting
+paper: False reflections
+where: APA Eastern Division Meeting
+city: Washington
+link: 
+description: "Empty"
+modified: 2015-05-13
 category: talk
 tags: 
 comments: true  
