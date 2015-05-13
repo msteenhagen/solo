@@ -7,34 +7,47 @@
   <div class="container">
   <article>       
         <div class="article-head">
-<h2><a href="{{ site.url }}"><i class="fa fa-align-left">{{ site.tag_text }}</i></a></h2>
+          <h2><a href="{{ site.url }}"><i class="fa fa-align-left">{{ site.tag_text }}</i></a></h2></div>
       <header class="entry-header">
-        <span class="entry-tags">{% for tag in page.tags %}<a href="{{ site.url }}/tags.html#{{ tag | cgi_encode }}" title="Pages tagged {{ tag }}" rel="tag">{{ tag }}</a>{% unless forloop.last %}&nbsp;&bull;&nbsp;{% endunless %}{% endfor %}</span>
-        {% if page.link %}
-          <h1 class="entry-title" itemprop="headline">{% if page.headline %}{{ page.headline }}{% else %}{{ page.paper }}{% endif %}</h1>
-        {% else %}
-          <h1 class="entry-title" itemprop="headline">{% if page.headline %}{{ page.headline }}{% else %}{{ page.title }}{% endif %}</h1>
+          <span class="entry-tags">{% for tag in page.tags %}<a href="{{ site.url }}/tags.html#{{ tag | cgi_encode }}" title="Pages tagged {{ tag }}" rel="tag">{{ tag }}</a>{% unless forloop.last %}&nbsp;&bull;&nbsp;{% endunless %}{% endfor %}</span>
+      </br>
+
+      {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
+      {% capture posttime %}{{page.date | date: '%s'}}{% endcapture %}
+          {% if posttime > nowunix %}
+            {% if page.where %}
+              {% if page.link %}
+              <a href="{{ page.link }}" target="_blank"><i class="fa fa-map-marker"><small> {{ page.where }}</small></i></a>
+                {% else %}
+              <i class="fa fa-map-marker"><small> {{ page.where }}</small></i>
+                {% endif %}
+              {% endif %}
+            <h3>{{ page.date | date: "%A, %B %-d, %Y"  }} <i class="fa fa-bullseye"> upcoming</i></h3> 
+            {% else %} 
+              {% if page.where %}
+                {% if page.link %}
+                  <a href="{{ page.link }}" target="_blank"><i class="fa fa-map-marker"><small> {{ page.where }}</small></i></a>
+                {% else %}
+                <i class="fa fa-map-marker"><small> {{ page.where }}</small></i>
+                {% endif %}
+              {% endif %}</br>
+              <i class="fa fa-calendar fa-1x"><small> {{ page.date | date: "%A, %B %-d, %Y"  }}</small></i>
+            {% endif %}
+
+          <h1 class="entry-title" itemprop="headline">{% if page.headline %}{{ page.headline }}{% else %}'{{ page.paper }}'{% endif %} </h1></header>
+
+        <ul class="nav">
+        {% if page.handout %}
+          <li><a href="{{ page.handout }}" target="_blank"><i class="fa fa-file-text fa-3x"></i><small>HANDOUT</small></a></li>
         {% endif %}
-      </header>
-      
-        {% if page.handout %}<span class="entry-date date modified"><time datetime="{{ page.modified }}" itemprop="dateModified"><i class="icon-file"> </i><a href="{{ page.handout }}" target="_blank">&nbsp;Handout</a></time></span>{% endif %}
+        {% if page.slides %}
+          <li><a href="{{ page.slides }}" target="_blank"><i class="fa fa-desktop fa-3x"></i><small>SLIDES</small></a></li>
+        {% endif %}
+        </ul>
+        <!-- <p><em>{{ page.description }}</em></p> -->
 
-        {% if page.slides %}<span class="entry-date date modified"><time datetime="{{ page.modified }}" itemprop="dateModified"><i class="icon-desktop"> </i><a href="{{ page.slides }}" target="_blank">&nbsp;Slides</a></time></span>{% endif %}
+        <p>{{ content }}</p>
 
-        {% if page.where %}<span class="entry-date date modified"><time datetime="{{ page.modified }}" itemprop="dateModified"><i class="icon-pencil"> </i><a href="{{ page.link }}" target="_blank">{{ page.where }}</a></time></span>{% endif %}
-
-        {{ content }}
-
-      
-    <nav class="pagination" role="navigation">
-      {% if page.previous %}
-        <a href="{{ site.url }}{{ page.previous.url }}" class="btn" title="{{ page.previous.title }}">Previous article</a>
-      {% endif %}
-      {% if page.next %}
-        <a href="{{ site.url }}{{ page.next.url }}" class="btn" title="{{ page.next.title }}">Next article</a>
-      {% endif %}
-    </nav>
-  
        </div>
     </article>
 {% include scripts.html %}	        
