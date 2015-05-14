@@ -4,56 +4,48 @@
   {% include head.html %}
 </head>
 <body>
-
   <div class="container">
-   <a href="/"><i class="fa fa-align-left"> {{ site.tag_text }}</i></a>
-  <article>       
-        <div class="article-head">
+        <a href="/"><i class="fa fa-align-left"> {{ site.tag_text }}</i></a>
+        <article>       
+          <div class="article-head">
           </div>
-      <header class="entry-header">
-      {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
-      {% capture posttime %}{{page.date | date: '%s'}}{% endcapture %}
-          {% if posttime > nowunix %}
-            {% if page.where %}
-              {% if page.link %}
-              <a href="{{ page.link }}" target="_blank"><i class="fa fa-map-marker"><small> {{ page.where }}</small></i></a>
-                {% else %}
-              <i class="fa fa-map-marker"><small> {{ page.where }}</small></i>
-                {% endif %}
-            <h3>{{ page.date | date: "%A, %B %-d, %Y"  }} <i class="fa fa-bullseye"> upcoming talk</i></h3> 
-            {% endif %}
-            {% else %} 
+        <header class="entry-header">  
+          <div>
+              {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
+              {% capture posttime %}{{page.date | date: '%s'}}{% endcapture %}
+              {% if posttime > nowunix %}
+                <h3>{{ page.date | date: "%A, %B %-d, %Y"  }} <i class="fa fa-bullseye"> upcoming talk</i></h3> 
+              {% else %} 
+                <i class="fa fa-calendar fa-1x"><small> {{ page.date | date: "%A, %B %-d, %Y"  }}</small></i>
+              {% endif %}
+          </div>
+          <div>
+              {% if page.author %}
+                <a href="{{ page.author.url }}"><i class="fa fa-user"> {{ page.author.name }}</i></a>
+              {% endif %}
               {% if page.where %}
                 {% if page.link %}
-                  <a href="{{ page.link }}" target="_blank"><i class="fa fa-map-marker"><small> {{ page.where }}</small></i></a>
+                  <a href="{{ page.link }}" target="_blank"><i class="fa fa-map-marker fa-1x"> {{ page.where }}</i></a>
                 {% else %}
-                <i class="fa fa-map-marker"><small> {{ page.where }}</small></i>
+                  <i class="fa fa-map-marker fa-1x"> {{ page.where }}</i>
                 {% endif %}
               {% endif %}
-              <i class="fa fa-calendar fa-1x"><small> {{ page.date | date: "%A, %B %-d, %Y"  }}</small></i>
-            {% endif %}
-          
-          {% if page.author %}
-          <a href="{{ page.author.url }}"><i class="fa fa-user"> {{ page.author.name }}</i></a>
-          {% endif %}
-          <h1 class="entry-title" itemprop="headline">{% if page.headline %}{{ page.headline }}{% else %}'{{ page.paper }}'{% endif %} </h1>
-          </header>
+          </div>
+          <h1 class="entry-title" itemprop="headline">
+            {% if page.headline %}{{ page.headline }}{% else %}'{{ page.paper }}'{% endif %} 
+          </h1>
+      </header>
         <ul class="nav">
-        {% if page.handout %}
-          <li><a href="{{ page.handout }}" target="_blank"><i class="fa fa-file-text fa-3x"></i><small>HANDOUT</small></a></li>
-        {% endif %}
-        {% if page.slides %}
-          <li><a href="{{ page.slides }}" target="_blank"><i class="fa fa-desktop fa-3x"></i><small>SLIDES</small></a></li>
-        {% endif %}
-        </ul>
-        <!-- <p><em>{{ page.description }}</em></p> -->
-
+          {% if page.handout %}
+            <li><a href="{{ page.handout }}" target="_blank"><i class="fa fa-file-text fa-3x"></i><small>HANDOUT</small></a></li>
+          {% endif %}
+          {% if page.slides %}
+            <li><a href="{{ page.slides }}" target="_blank"><i class="fa fa-desktop fa-3x"></i><small>SLIDES</small></a></li>
+          {% endif %}
+        </ul>       
         <p>{{ content }}</p>
-       </div>
-
-    </article>
-
-{% include scripts.html %}	       
-
+        </article>
+  </div>
+    {% include scripts.html %}	       
 </body>
 </html>
