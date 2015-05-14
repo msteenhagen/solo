@@ -1,6 +1,6 @@
 ---
 layout: talk
-title: Collingwood, sympathy, and the work of art
+title: Collingwood, sympathy, and art
 description: "A workshop jointly organised by HPS Cambridge and INSEI"
 author: 
     name: Maarten Steenhagen
