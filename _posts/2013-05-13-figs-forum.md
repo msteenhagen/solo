@@ -5,7 +5,7 @@ description: "description"
 author: 
     name: Maarten Steenhagen
     url: http://msteenhagen.github.io
-paper: Brain disruption & imagined people
+paper: Brain disruption and imagined people
 where: FIGS Friday Forum, UCL
 city: London
 <!-- time: --> 
