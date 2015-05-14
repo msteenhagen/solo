@@ -5,7 +5,7 @@ layout: default
 {% for post in site.posts %}
 {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
 {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
-    <article>       
+<article>       
         <div class="article-head">
             <font color="grey">{{ post.date | date: "%Y" }}</font>
             {% if post.details %}
@@ -27,8 +27,6 @@ layout: default
                 {% endif %}
             </p>
         </div>
-    </article>
-{% if forloop.last %}
-{% else %}
-{% endif %}
+</article>
+{% if forloop.last %}{% else %}{% endif %}
 {% endfor %}
