@@ -8,7 +8,7 @@ author:
 paper: Collingwood, sympathy, and the work of art
 where:  History and Philosophy of Science, Cambridge
 city: Cambridge
-<!-- time: --> 
+time: 9:30
 <!-- link:  -->
 <!-- handout:  -->
 <!-- slides:  -->
