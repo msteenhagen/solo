@@ -16,9 +16,17 @@ layout: default
         {% endif %}
         <!--End of the temporary restriction-->
         <p>
-        {% if posttime > nowunix %} <sup><i class="fa fa-bullseye"><small> upcoming</small></i></sup> {% else %} {% endif %}
+        {% if posttime > nowunix %} 
+            <sup><i class="fa fa-bullseye"><small> upcoming </small></i></sup>
+            {% else %} 
+        {% endif %}
         <sup><i class="fa fa-calendar"><small> {{ post.date | date: "%b %d" }}</small></i></sup>
-        <sup><i class="fa fa-map-marker"><small> {{ post.where }}</small></i></sup>
+        {% if post.where %}
+        <sup><small> | {{ post.where }}</small></sup>
+        {% endif %}
+        {% if post.city %}
+        <sup><i class="fa fa-map-marker"><small> {{ post.city }}</small></i></sup>
+        {% endif %}
         </p>
         </div>
     </article>
