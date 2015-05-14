@@ -1,6 +1,6 @@
 ---
 layout: talk
-published: true
+details: yes
 title: Speaking at the 2014 Joint Session in Cambridge
 paper: Source representationalism
 where: Joint Session of the Aristotelian Society and Mind Association
