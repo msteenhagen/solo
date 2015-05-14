@@ -6,7 +6,7 @@ author:
     name: Maarten Steenhagen
     url: http://msteenhagen.github.io
 paper: Researching the self
-where: Art as a Mode of Enquiry, Oxford
+where: Art as a Mode of Enquiry
 city: Oxford
 <!-- time: --> 
 <!-- link:  -->
