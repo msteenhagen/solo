@@ -10,7 +10,7 @@ where: British Society of Aesthetics Annual Conference
 city: Oxford
 <!-- time: --> 
 <!-- link:  -->
-<!-- handout:  -->
+handout: https://dl.dropboxusercontent.com/u/14525704/PDF/bsa-handout.pdf
 <!-- slides:  -->
 details: true
 ---
