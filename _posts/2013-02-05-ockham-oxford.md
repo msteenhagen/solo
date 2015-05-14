@@ -6,7 +6,7 @@ author:
     name: Maarten Steenhagen
     url: http://msteenhagen.github.io
 paper: Pictures and perceptual knowledge
-where: Ockham Society, Oxford
+where: Ockham Society
 city: Oxford
 <!-- time: --> 
 <!-- link:  -->
