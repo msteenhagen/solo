@@ -6,7 +6,7 @@ author:
     name: Maarten Steenhagen
     url: http://msteenhagen.github.io
 paper: Collingwood, sympathy, and the work of art
-where:  History and Philosophy of Science, Cambridge
+where:  "INSEI & HPS conference"
 city: Cambridge
 time: 9:30
 <!-- link:  -->
