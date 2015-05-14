@@ -18,7 +18,7 @@ layout: default
                         <sup><i class="fa fa-bullseye"><small> upcoming </small></i></sup>
                     {% else %} 
                 {% endif %}
-                <sup><i class="fa fa-calendar"><small> {{ post.date | date: "%b %d" }}</small></i></sup>
+                <sup><i class="fa fa-calendar-o"><small> {{ post.date | date: "%b %d" }}</small></i></sup>
                 {% if post.where %}
                     <sup><small> | {{ post.where }}</small></sup>
                 {% endif %}
