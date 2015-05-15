@@ -3,7 +3,7 @@ layout: talk
 details: yes
 title: Speaking at the 2014 Joint Session in Cambridge
 paper: Source representationalism
-where: Joint Session of the Aristotelian Society and Mind Association
+where: Aristotelian Society & Mind Association Joint Session
 city: Cambridge
 link: http://www.aristoteliansociety.org.uk/the-joint-session/the-2014-joint-session/
 description: "Just about everything you'll need to style in the theme: headings, paragraphs, blockquotes, tables, code blocks, and more."
