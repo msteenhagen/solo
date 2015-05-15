@@ -2,7 +2,7 @@
 @import url(//fonts.googleapis.com/css?family=Raleway:500);
 
 html {
-  font: 16px/1.5 Raleway, sans-serif;
+  font: 20px/1.5 Raleway, sans-serif;
 }
 
 @media (min-width: 30rem) {
@@ -69,15 +69,70 @@ h2 {
   }
 }
 
-h3, h4, h5, h6 {
+h3, h4, h5 {
   margin-top: 1.5rem;
   font-size: 1rem;
   text-transform: uppercase;
 }
 
+h6 {
+  margin-top: 2rem;
+  font-size: 1.15rem;
+  margin-bottom: 0.25rem;
+}
+
+@media (min-width: 40rem) {
+  h6 {
+    margin-top: 1.0rem;
+    font-size: 1.25rem;
+    margin-bottom: 0.2rem;
+  }
+}
+
+.upcoming{
+  font-size: 1.25rem;
+}
+
+.dateline{
+  font-size: 1.2rem;
+  max-width: 35rem;
+  margin-top: 1.2rem;
+  margin-bottom: 0.0rem;
+  line-height: 0.3;
+}
+
+@media (min-width: 40rem) {
+  .dateline {
+  font-size: 1.2rem;
+  text-align: left;
+  margin-top: 1.0rem;
+  margin-bottom: 0.0rem;
+  }
+}
+
 p, ul, ol, dl, table, pre, blockquote {
   margin-top: 0;
   margin-bottom: 1rem;
+}
+
+p.date {
+}
+
+@media (min-width: 40rem) {
+  p.date {
+    display: inline-block;
+  }
+}
+
+p.datediv {
+  display: none;
+}
+
+@media (min-width: 40rem) {
+  p.datediv {
+    font-size: 1.2rem;
+    display: inline-block;
+  }
 }
 
 ul, ol {
