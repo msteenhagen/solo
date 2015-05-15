@@ -2,31 +2,33 @@
 layout: default
 ---
 
+<div class="upcoming"><sup><small><i class="fa fa-asterisk"> Upcoming</i></small></sup></div>
 {% for post in site.posts %}
 {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
-{% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
-<article>       
-        <div class="article-head">
-            <font color="grey">{{ post.date | date: "%Y" }}</font>
-            {% if post.details %}
-                <a href="{{ site.url }}{{ post.url }}">'{{ post.paper }}'</a> 
-            {% else %}
-                '{{ post.paper }}'
-            {% endif %}
-            <p>
+{% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}    
+<article> 
+            <div class="article-head">
+                {% if post.details %}
+                    <h6><a href="{{ site.url }}{{ post.url }}">'{{ post.paper }}'</a>
+                {% else %}
+                    <h6>'{{ post.paper }}'
+                {% endif %}
                 {% if posttime > nowunix %} 
-                        <sup><i class="fa fa-bullseye"><small> upcoming </small></i></sup>
-                    {% else %} 
+                    <sup><small><i class="fa fa-asterisk"></i></small></sup>
                 {% endif %}
-                <sup><i class="fa fa-calendar-o"><small> {{ post.date | date: "%b %d" }}</small></i></sup>
-                {% if post.where %}
-                    <sup><small> | {{ post.where }}</small></sup>
-                {% endif %}
-                {% if post.city %}
-                    <sup><i class="fa fa-map-marker"><small> {{ post.city }}</small></i></sup>
-                {% endif %}
-            </p>
-        </div>
+                </h6>
+                <div class="dateline"> 
+                    <p class="date"><sup><small> {{ post.date | date: "%A, %B %-d, %Y" }} </small></sup></p> 
+                    <p class="datediv"><sup><small> > </small></sup></p>    
+                    {% if post.where %}
+                        <p class="date"><sup><small> {{ post.where }}</small></sup></p>
+                    {% endif %}
+                    {% if post.city %}
+                        <p class="datediv"><sup><small> in</small></sup></p>    
+                        <p class="date"><sup><small> {{ post.city }}</small></sup></p>
+                    {% endif %}
+                </div>
+            </div>
 </article>
 {% if forloop.last %}{% else %}{% endif %}
 {% endfor %}
