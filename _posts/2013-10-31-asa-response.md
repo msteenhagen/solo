@@ -3,7 +3,7 @@ layout: talk
 published: true
 title: Response at the 2013 ASA Conference
 paper: Response to Renault-Steele
-where: American Society of Aesthetics 2013 Annual Conference
+where: American Society of Aesthetics Annual Conference
 city: San Diego
 link: http://www.
 description: "Just about everything you'll need to style in the theme: headings, paragraphs, blockquotes, tables, code blocks, and more."
