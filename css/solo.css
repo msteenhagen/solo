@@ -40,11 +40,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.0rem;
   margin-bottom: 1rem;
 }
 
-@media (min-width: 30rem) {
+@media (min-width: 40rem) {
   h1 {
     font-size: 3rem;
     margin-bottom: 3rem;
@@ -58,6 +58,7 @@ h1 a {
 h2 {
   margin-top: 2rem;
   font-size: 1.25rem;
+  max-width: 35rem;
   margin-bottom: 0.75rem;
 }
 
