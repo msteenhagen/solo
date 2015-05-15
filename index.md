@@ -16,7 +16,7 @@ layout: default
                 {% if posttime > nowunix %} 
                     <sup><small><i class="fa fa-asterisk"></i></small></sup>
                 {% endif %}
-                </h6>
+                    </h6>
                 <div class="dateline"> 
                     <p class="date"><sup><small> {{ post.date | date: "%A, %B %-d, %Y" }} </small></sup></p> 
                     <p class="datediv"><sup><small> > </small></sup></p>    
