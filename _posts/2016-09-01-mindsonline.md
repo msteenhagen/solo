@@ -1,7 +1,7 @@
 ---
 layout: talk
 published: true
-title: "Sounds as Perceptual Mediators"
+title: Presenting Sounds as Perceptual Mediators Online
 author: 
     name: Maarten Steenhagen
     url: http://msteenhagen.github.io
